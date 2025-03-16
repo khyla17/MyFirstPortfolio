@@ -7,3 +7,6 @@ Key Features:
 - Dark Mode: Users can toggle between light and dark modes for a better browsing experience.
 - Dynamic Projects Section: Projects are displayed dynamically with "Read More" functionality, allowing users to explore detailed project descriptions.
 - Smooth Navigation: The website has a smooth scroll effect for seamless transitions between sections.
+
+HERE IS S THE LIVE LINK TO MY PORTFOLIO WEBSITE:
+https://khyla17.github.io/MyFirstPortfolio/
