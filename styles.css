@@ -1,0 +1,792 @@
+/* General Styles for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+/* CSS Variables for color themes */
+:root {
+    --bg-color: #fce4ec; /* Light pastel pink background */
+    --second-bg-color: #f8bbd0; /* Soft pastel pink for secondary background */
+    --text-color: #333; /* Dark gray text for contrast */
+    --main-color: #ff80ab; /* Soft pastel pink for accents */
+}
+
+/* Set root font size and prevent horizontal scrolling */
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+/* Body background and text color */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212; /* Dark background color */
+    color: white; /* Light text color */
+}
+
+/* Dark Mode Header Styles */
+.dark-mode .header {
+    background: rgba(18, 18, 18, 0.8); /* Darker header background */
+}
+
+/* Dark Mode Logo and Navbar Styles */
+.dark-mode .logo,
+.dark-mode .navbar a {
+    color: white; /* Change logo and navbar text to white in dark mode */
+}
+
+/* Dark Mode Navbar Active and Hover States */
+.dark-mode .navbar a:hover,
+.dark-mode .navbar a.active {
+    color: var(--main-color); /* Keep the main pink color for active links */
+    border-bottom: 3px solid var(--main-color); /* Pink underline for active links */
+}
+
+/* Dark Mode Sections */
+.dark-mode .home,
+.dark-mode .about,
+.dark-mode .skills,
+.dark-mode .projects,
+.dark-mode .contact {
+    background-color: #121212; /* Dark background for sections */
+    color: white; /* Light text color */
+}
+
+/* Dark Mode Social Icons */
+.dark-mode .social-icons a {
+    background-color: #333; /* Dark background for social icons */
+    color: var(--main-color); /* Pink color for icons */
+}
+
+/* Dark Mode Button Styles */
+.dark-mode .btn {
+    background-color: var(--main-color); /* Maintain the pink button in dark mode */
+    color: white;
+}
+
+/* Dark Mode Skills Box Hover Effect */
+.dark-mode .skills-box:hover {
+    background: var(--main-color); /* Pink background on hover */
+    color: black; /* Text color changes to black */
+}
+
+/* Dark Mode Footer Styles */
+.dark-mode .footer {
+    background-color: #333; /* Dark footer background */
+    color: white; /* Light text color in the footer */
+}
+
+/* Dark Mode Footer Links */
+.dark-mode .footer a {
+    color: white; /* Links in footer turn white */
+}
+
+/* Dark Mode Toggle Button Styles */
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+/* Dark Mode Toggle Icon Styles */
+#moon-icon,
+#sun-icon {
+    font-size: 2.5rem;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade transition for icons */
+}
+
+#moon-icon {
+    display: block;
+    opacity: 1; /* Initially show the moon icon */
+}
+
+#sun-icon {
+    display: block;
+    opacity: 0;
+    color: var(--main-color); /* Sun icon color for light mode */
+}
+
+/* Dark Mode Icon Visibility Toggle */
+.dark-mode #moon-icon {
+    opacity: 0;
+}
+
+.dark-mode #sun-icon {
+    opacity: 1;
+    color: white; /* Sun icon color in dark mode */
+}
+
+/* Dark Mode Styles for Skills and Contact Sections */
+.dark-mode .skills,
+.dark-mode .contact {
+    color: white; /* Change text color to white in dark mode */
+}
+
+.dark-mode .skills h2 {
+    color: white; /* Skills section heading will be white in dark mode */
+}
+
+.dark-mode .contact h2 {
+    color: white; /* Contact section heading will be white in dark mode */
+}
+
+/* Dark Mode Skills Box Styles */
+.dark-mode .skills-box {
+    background-color: #333; /* Dark background for skills boxes */
+    color: white; /* Text color white */
+}
+
+/* Dark Mode Skills Box Titles and Text */
+.dark-mode .skills-info h4,
+.dark-mode .skills-info p {
+    color: white; /* Titles and text in the skills boxes will be white in dark mode */
+}
+
+/* Dark Mode for Project Cards */
+.dark-mode .project-card {
+    background-color: #FFC1CC; /* Dark Pink color for project cards */
+    color: white; /* Ensure text is white for readability */
+}
+
+/* Optional: Adjusting the "Read More" button color in dark mode */
+.dark-mode .project-card .btn {
+    background-color: #fe7ba6; /* Slightly brighter pink for buttons */
+    color: white;
+}
+
+.dark-mode .project-card .btn:hover {
+    background-color: #FF1E6A; /* Darker pink when hovered */
+}
+
+/* Dark Mode Input Fields for Contact Form */
+.dark-mode .contact form .input-box input,
+.dark-mode .contact form textarea {
+    background-color: #333; /* Dark background for input fields */
+    color: white; /* White text color for input fields */
+    border: 2px solid var(--main-color); /* Keep pink border for the input fields */
+}
+
+/* Dark Mode Footer Styles */
+.dark-mode .footer {
+    background-color: #333; /* Dark footer background */
+    color: white; /* White text in footer */
+}
+
+.dark-mode .footer a {
+    color: white; /* Footer links will be white in dark mode */
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect for header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Logo Styles */
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Slight scale on hover */
+}
+
+/* Navbar Styles */
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color); /* Pink color for active links */
+    border-bottom: 3px solid var(--main-color); /* Pink underline for active links */
+}
+
+/* Menu Icon for mobile */
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none; /* Hidden by default */
+}
+
+/* Section Styles */
+section {
+    min-height: 100vh; /* Full viewport height */
+    padding: 10rem 9% 10rem;
+}
+
+/* Home Section Styles */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Home Content Styles */
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+/* Home Title */
+.home-content h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+
+/* Home Heading */
+.home-content h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+
+/* Home Image Styles */
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    position: relative;
+    top: 3rem;
+    width: 22vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+}
+
+/* Home Paragraph */
+.home-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 1000px;
+}
+
+/* Social Icons Styles */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 0 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: white;
+    transform: scale(1.3) translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: white;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+/* Text Animation for Home Section */
+.text-animation {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span {
+    position: relative;
+}
+
+.text-animation span::before {
+    content: 'Web Developer';
+    color: var(--second-bg-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after {
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--main-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+/* Keyframes for Text Animation */
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: 'Web Developer';
+    }
+    21%, 40% {
+        content: "Technology Enthusiast";
+    }
+    41%, 60% {
+        content: "STEM Graduate";
+    }
+    61%, 80% {
+        content: "Student at PLM";
+    }
+    81%, 100% {
+        content: "Aspiring IT College Student";
+    }
+}
+
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 8px);
+    }
+}
+
+/* About Section */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem; /* Adjust the gap between the image and text */
+    background: var(--second-bg-color); /* Soft pastel pink background */
+    color: white; /* White text color */
+    padding: 5rem 9%; /* Padding for the section */
+}
+
+/* About Section Heading (Main Title) */
+.about h2 span {
+    color: var(--main-color); /* Pink color for span in heading */
+    text-shadow: 0 0 50px var(--main-color); /* Glow effect for span */
+}
+
+/* About Image Container */
+.about-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* About Image Styles */
+.about-img img {
+    width: 25vw;  /* Adjust the size for better proportion */
+    height: 25vw; /* Keep the height and width equal to ensure circular shape */
+    border-radius: 50%; /* Circle the image */
+    box-shadow: 0 0 25px var(--main-color); /* Pink glow around image */
+    transition: 0.4s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* About Image Hover Effect */
+.about-img img:hover {
+    box-shadow: 0 0 50px var(--main-color), 0 0 100px var(--main-color); /* Enhance the glow when hovered */
+}
+
+/* Main Heading Styling (for the page title) */
+.heading {
+    text-align: center; /* Centered text */
+    font-size: 8rem; /* Large font size */
+}
+
+/* About Content Heading */
+.about-content h2 {
+    text-align: left; /* Align to the left */
+    line-height: 1.5; /* Adjust line height for better spacing */
+}
+
+/* About Content Subheading */
+.about-content h3 {
+    font-size: 2.6rem; /* Set font size */
+}
+
+/* About Content Paragraph */
+.about-content p {
+    font-size: 1.6rem; /* Set font size */
+    margin: 2rem 0 3rem; /* Add margin to space out text */
+}
+
+/* Text Animation Styles for About Section */
+.text-animation2 {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px; /* Ensure a minimum width */
+}
+
+.text-animation2 span {
+    position: relative;
+}
+
+.text-animation2 span::before {
+    content: 'Web Developer'; /* Initial text content */
+    color: var(--main-color); /* Color for the text */
+    animation: words 20s infinite; /* Apply words animation */
+}
+
+/* Cursor Animation */
+.text-animation2 span::after {
+    content: "";
+    background-color: var(--second-bg-color); /* Background color for cursor effect */
+    position: absolute;
+    width: calc(100% + 8px); /* Ensure the cursor is at the end */
+    height: 100%;
+    border-left: 3px solid var(--second-bg-color); /* Cursor line */
+    right: -8px; /* Position it correctly */
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite; /* Cursor blinking and typing animation */
+}
+
+/* Keyframes for Cursor Animation */
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--main-color); /* Cursor blinks with main color */
+    }
+}
+
+/* Keyframes for Words Animation */
+@keyframes words {
+    0%, 20% {
+        content: 'Web Developer';
+    }
+    21%, 40% {
+        content: "Technology Enthusiast";
+    }
+    41%, 60% {
+        content: "STEM Graduate";
+    }
+    61%, 80% {
+        content: "Student at PLM";
+    }
+    81%, 100% {
+        content: "Aspiring IT College Student";
+    }
+}
+
+/* Keyframes for Typing Animation */
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0; /* Hide text at specific intervals */
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 8px); /* Show full width */
+    }
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px; /* Set width of scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color); /* Thumb color of scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg-color); /* Track color of scrollbar */
+    width: 10px; /* Track width */
+}
+
+/* Secondary Heading Styling */
+.heading {
+    text-align: center; /* Centered heading */
+    font-size: 7rem; /* Font size for heading */
+    margin: 5rem 0; /* Margin for spacing */
+}
+
+/* Skills Section */
+.skills {
+    background-color: var(--bg-color); /* Light background color for the skills section */
+    color: black; /* Text color for the skills section */
+}
+
+/* Skills Section Heading */
+.skills h2 {
+    color: var(--text-color); /* Dark gray color for the heading */
+}
+
+/* Skills Container (Grid Layout for Skills Boxes) */
+.skills-container {
+    display: grid; /* Use grid layout for the skills section */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+    align-items: center; /* Center the items vertically in the grid */
+    gap: 2.5rem; /* Add gap between the grid items */
+}
+
+/* Individual Skills Box */
+.skills-box {
+    display: flex; /* Flexbox layout for centering content inside the box */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: var(--main-color); /* Main color as the background */
+    height: 600px; /* Fixed height for each skills box */
+    border-radius: 3rem; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    border: 5px solid transparent; /* Transparent border initially */
+    transition: 0.4s ease-in-out; /* Smooth transition on hover */
+}
+
+/* Hover Effect for Skills Box */
+.skills-box:hover {
+    background: var(--second-bg-color); /* Change background color on hover */
+    color: var(--main-color); /* Change text color to main color on hover */
+    border: 5px solid var(--main-color); /* Change border color to main color */
+    transform: scale(1.03); /* Slightly scale up the box on hover */
+}
+
+/* Skills Information Inside Each Box */
+.skills-info {
+    display: flex; /* Flexbox layout for skill info */
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center text */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 5rem; /* Add padding for spacing */
+}
+
+/* Skill Title Inside Skills Box */
+.skills-info h4 {
+    font-size: 4rem; /* Large font size for skill title */
+    margin: 2rem 0; /* Margin above and below the title */
+    font-weight: 800; /* Bold weight for the title */
+}
+
+/* Skill Description Inside Skills Box */
+.skills-info p {
+    font-size: 1.4rem; /* Set font size for the skill description */
+    font-weight: 600; /* Semi-bold weight for description */
+    line-height: 1.7; /* Increase line height for readability */
+}
+
+/* Skill Icon Inside Skills Box */
+.skills-info i {
+    font-size: 8rem; /* Large icon size */
+}
+
+/* Projects Section */
+.projects {
+    background-color: var(--second-bg-color); /* Background color for the projects section */
+}
+
+/* Container for Project Cards (Grid Layout) */
+.projects-box {
+    display: grid; /* Use grid layout for the project cards */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid with auto-fitting columns */
+    place-items: center; /* Center items in the grid */
+    gap: 3rem; /* Add gap between the grid items */
+    row-gap: 5rem; /* Add row gap between items */
+}
+
+/* Individual Project Card */
+.project-card {
+    display: flex; /* Flexbox layout for project card */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    text-align: justify; /* Align text in the project card */
+    background-color: var(--bg-color); /* Background color for the card */
+    border: 2px solid var(--main-color); /* Border with main color */
+    border-radius: 3rem; /* Rounded corners */
+    gap: 2rem; /* Add space between the elements inside the card */
+    padding: 5rem 2rem; /* Padding for the content inside the card */
+    overflow: hidden; /* Hide any overflowing content */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 0 5px var(--main-color); /* Light shadow effect around the card */
+    transition: 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover Effect for Project Card */
+.project-card:hover {
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color); /* Enhance the shadow effect on hover */
+    transform: scale(1.02); /* Slight scale up effect */
+}
+
+/* Project Card Image */
+.project-card img {
+    max-width: 300px; /* Limit the width of the image */
+    border-radius: 2em; /* Rounded corners for the image */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+/* Project Title */
+.project-card h3 {
+    font-size: 3rem; /* Large font size for the title */
+}
+
+/* Project Description Text */
+.project-card p {
+    font-size: 1.6rem; /* Font size for the description */
+}
+
+.contact {
+    background-color: var(--bg-color);
+}
+.contact h2 {
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+.contact form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem 0;
+    text-align: center;
+}
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: 2rem;
+    border: 2px solid var(--main-color);
+    margin: 1.5rem 0;
+    resize: none;
+}
+
+/* Footer Section */
+.footer {
+    background-color: var(--second-bg-color); /* Background color for the footer */
+    padding: 50px 0; /* Add padding to the top and bottom of the footer */
+}
+
+/* Social Icons Section within Footer */
+.footer .social-icons {
+    text-align: center; /* Center the social media icons */
+}
+
+/* List of Links in the Footer */
+.footer ul {
+    text-align: center; /* Center the list of links */
+    font-size: 1.8rem; /* Set the font size for the links */
+}
+
+/* Individual List Items (Links) */
+.footer ul li {
+    display: inline-block; /* Display the list items horizontally */
+    margin-left: 20px; /* Add spacing between the list items */
+}
+
+/* Style for Links in the Footer */
+.footer ul li a {
+    color: white; /* Set link color to white */
+    border-bottom: 3px solid transparent; /* Add transparent border initially for hover effect */
+    transition: 0.3s ease-in-out; /* Smooth transition effect for hover */
+}
+
+/* Hover Effect for Footer Links */
+.footer ul li a:hover {
+    border-bottom: 3px solid var(--main-color); /* Add pink underline on hover */
+}
+
+/* Copyright Section */
+.footer .copyright {
+    text-align: center; /* Center the copyright text */
+    margin-top: 40px; /* Add space above the copyright text */
+    font-size: 16px; /* Set font size for the copyright */
+}
+
+/* Footer Paragraph Section */
+.footer p {
+    text-align: center; /* Center the paragraph text */
+    margin-top: 20px; /* Add space above the paragraph */
+    font-size: 12px; /* Set font size for the paragraph */
+}
